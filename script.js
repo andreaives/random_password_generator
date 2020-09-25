@@ -1,11 +1,7 @@
 
 // declare global variables
-
 var userLength = 0;
-var userSpecialChar;
-var userNumbers;
-var userUpLetter;
-var userLowLetters;
+
 
 //------declare arrays--------
 var upLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", 
@@ -19,19 +15,23 @@ specialChar= ["!","#","$", "%", "&"]
 function criteriaNeeded(){ 
     userLength=parseInt(prompt("How long do you want your password to be? Please choose between 8-128."));
       if (userLength >= 8 || passwordLength <= 128){
-        userUpLetter=confirm("Would you like to use upper case letters?");}    
+        var userUpLetter=confirm("Would you like to use upper case letters?"); 
+        var userLowLetters=confirm("Would you like to lower case letters?");
+        var userNumbers=confirm("Would you like to use numbers?");
+        var userSpecialChar=confirm("Would you like to use special characters?");
+          // generatePassword(); 
+      }
+      
+
+      if (!userLowLetters && !userUpLetter && !userNumbers && !userSpecialChar){
+        alert("You must choose at least one password criteria.");
+        userUpLetter=confirm("Would you like to use upper case letters?");} 
         userLowLetters=confirm("Would you like to lower case letters?");
         userNumbers=confirm("Would you like to use numbers?");
         userSpecialChar=confirm("Would you like to use special characters?");
-          // generatePassword(); 
-
-      while (!userLowLetters && !userUpLetter && !userNumbers && !userSpecialChar){
-        alert("You must choose at least one password criteria.")
-        dataNeeded();
-            
       }
         
-      }  
+        
       
       
     // --------generate Password------
@@ -49,6 +49,7 @@ function criteriaNeeded(){
       console.log(userNumbers)
       console.log(userSpecialChar)
       console.log(userUpLetter)
+      console.log(criteriaNeeded)
       
          
 criteriaNeeded();
