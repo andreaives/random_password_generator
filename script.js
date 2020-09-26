@@ -1,7 +1,10 @@
 
 // declare global variables
 var userLength = 0;
-
+var userUpLetter;
+var userLowLetters;
+var userNumbers;
+var specialChar;
 
 //------declare arrays--------
 var upLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", 
@@ -39,42 +42,42 @@ function criteriaNeeded() {
         userSpecialChar : userSpecialChar,
         userUpLetter : userUpLetter,
       }
-      return passwordOptions
-      
+      return passwordOptions;
     
     }
     
-  criteriaNeeded();
+  
 
     function getRandom(arr) {
       var randIndex = Math.floor(Math.random() * arr.length);
-      return arr[randIndex]
+      var result = arr[randomIndex];
+      return result;
     }
     
       
     // --------generate Password------
       function generatePassword(){
-        var result = []
-        var possibleCharacters = []
-        var guaranteedCharacters = []
-        var options = criteriaNeeded()
-
+        var options = criteriaNeeded();
+        var result = [];
+        var possibleCharacters = [];
+        var guaranteedCharacters = [];
+        
 
         if (options.userLowLetters) {
           possibleCharacters = possibleCharacters.concat(lowLetters)
-          guaranteedCharacters.push(getRandom(lowLetters))
+          guaranteedCharacters.push(getRandom(lowLetters));
         }
         if (options.userNumbers) {
           possibleCharacters = possibleCharacters.concat(numbers)
-          guaranteedCharacters.push(getRandom(numbers))
+          guaranteedCharacters.push(getRandom(numbers));
         }
         if (options.userUpLetter) {
           possibleCharacters = possibleCharacters.concat(upLetters)
-          guaranteedCharacters.push(getRandom(upLetters))
+          guaranteedCharacters.push(getRandom(upLetters));
         }
         if (options.userSpecialChar) {
           possibleCharacters = possibleCharacters.concat(specialChar)
-          guaranteedCharacters.push(getRandom(specialChar))
+          guaranteedCharacters.push(getRandom(specialChar));
         }
         
 
@@ -84,7 +87,7 @@ function criteriaNeeded() {
         for (var i=0; i < guaranteedCharacters.length; i++){
           result[i] = guaranteedCharacters[i]
         }
-        return result.join("")
+        return result.join("");
       }
       
 
