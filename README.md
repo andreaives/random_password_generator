@@ -3,7 +3,7 @@ Description
 This is a random password generator. Users can generate a password 8-128 characters long with parameters they set through a series of prompts. If a user picks a parameter outside of ranges given they will be prompeted to correct their response. If a user clicks cancel on all criteria prompts they will be alerted to choose at least one password criteria.
  
 
-Usage
+##Usage
 To generate a random password:
 
 1. Click the 'Generate Password" button.
@@ -25,14 +25,14 @@ To generate a random password:
 
 5. If you follow all the rules your random password will be generated. (:
 
-Technologies Used
+######Technologies Used
 The main tech used was JavaScript, HTML, and CSS. This code was created on Visual Studio and renders were checked on Google Chrome. 
 
 
-Problems I faced
+##Problems I faced
 My biggest problem was finding the bit of code that was not allowing my prompts to render correctly and making sure the prompts were looping properly. There was also an issue when I tried to generate the random password it would include part of my code.
 
 
-Credits
+##Credits
 Most of the credit goes to my tutor Tyler Bolty & my amazing classmates that keep me sane!
 
