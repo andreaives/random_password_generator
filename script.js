@@ -24,16 +24,14 @@ function criteriaNeeded() {
         var userSpecialChar=confirm("Would you like to use special characters?"); 
       }
       else{
-        return 
+        alert("You must choose a number between 8-128. Please press the generate password button to start over.")
       }
       
 
       if (!userLowLetters && !userUpLetter && !userNumbers && !userSpecialChar){
         alert("You must choose at least one password criteria.");
       }
-      else{
-        return
-      }
+      
       // Object to hold key value pairs
       var passwordOptions = {
         userLowLetters : userLowLetters,
@@ -44,16 +42,15 @@ function criteriaNeeded() {
       }
       return passwordOptions;
     
-    }
-    
-  
-
+    } 
+    // 
     function getRandom(arr) {
-      var randIndex = Math.floor(Math.random() * arr.length);
+      var randomIndex = Math.floor(Math.random() * arr.length);
       var result = arr[randomIndex];
       return result;
+      
     }
-    
+  
       
     // --------generate Password------
       function generatePassword(){
@@ -82,16 +79,17 @@ function criteriaNeeded() {
         
 
         for (var i=0; i < options.userLength; i++) {
-          result.push(getRandom(possibleCharacters))
+          var possibleCharacters = getRandom(possibleCharacters);
+          result.push(getRandom);
+          
         }
         for (var i=0; i < guaranteedCharacters.length; i++){
-          result[i] = guaranteedCharacters[i]
+          result[i] = guaranteedCharacters[i];
         }
         return result.join("");
+      
       }
       
-
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
@@ -102,3 +100,4 @@ function writePassword() {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
