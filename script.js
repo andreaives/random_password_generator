@@ -1,6 +1,6 @@
 
 // declare global variables
-var userLength = 0;
+var userlength;
 var userUpLetter;
 var userLowLetters;
 var userNumbers;
@@ -16,17 +16,13 @@ var specialChar= ["!","#","$", "%", "&"]
 
 //--------- prompt users to confirm what password criteria they would like to use--------
 function criteriaNeeded() { 
-    userLength=parseInt(prompt("How long do you want your password to be? Please choose between 8-128."));
-      if (userLength >= 8 || passwordLength <= 128){
+    userLength= parseInt(prompt("How long do you want your password to be? Please choose between 8-128."));
+      if (userLength >= 8 || userLength <= 128){
         var userUpLetter=confirm("Would you like to use upper case letters?");
         var userLowLetters=confirm("Would you like to lower case letters?");
         var userNumbers=confirm("Would you like to use numbers?");
         var userSpecialChar=confirm("Would you like to use special characters?"); 
       }
-      else{
-        alert("You must choose a number between 8-128. Please press the generate password button to start over.")
-      }
-      
 
       if (!userLowLetters && !userUpLetter && !userNumbers && !userSpecialChar){
         alert("You must choose at least one password criteria.");
@@ -40,16 +36,18 @@ function criteriaNeeded() {
         userSpecialChar : userSpecialChar,
         userUpLetter : userUpLetter,
       }
-      return passwordOptions;
-    
+      return passwordOptions
+
     } 
+    
     // 
     function getRandom(arr) {
-      var randomIndex = Math.floor(Math.random() * arr.length);
-      var result = arr[randomIndex];
-      return result;
+      var randomElement = Math.floor(Math.random() * arr.length);
+      var result = arr[randomElement];
+      return result; 
       
     }
+    
   
       
     // --------generate Password------
@@ -79,13 +77,13 @@ function criteriaNeeded() {
         
 
         for (var i=0; i < options.userLength; i++) {
-          var possibleCharacters = getRandom(possibleCharacters);
-          result.push(getRandom);
+          result.push(getRandom(possibleCharacters));
           
         }
         for (var i=0; i < guaranteedCharacters.length; i++){
           result[i] = guaranteedCharacters[i];
         }
+        //make an array into a string
         return result.join("");
       
       }
@@ -98,6 +96,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
