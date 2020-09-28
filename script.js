@@ -17,12 +17,17 @@ var specialChar= ["!","#","$", "%", "&"]
 //--------- prompt users to confirm what password criteria they would like to use--------
 function criteriaNeeded() { 
     userLength= parseInt(prompt("How long do you want your password to be? Please choose between 8-128."));
-      if (userLength >= 8 || userLength <= 128){
+      if (userLength >= 8 && userLength <= 128 && isNaN(userlength)){
         var userUpLetter=confirm("Would you like to use upper case letters?");
         var userLowLetters=confirm("Would you like to lower case letters?");
         var userNumbers=confirm("Would you like to use numbers?");
         var userSpecialChar=confirm("Would you like to use special characters?"); 
       }
+      else {
+        alert("please choose a number between 8-128.")
+        return;
+      }
+    
 
       if (!userLowLetters && !userUpLetter && !userNumbers && !userSpecialChar){
         alert("You must choose at least one password criteria.");
