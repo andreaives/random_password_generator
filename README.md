@@ -6,7 +6,8 @@ This is a random password generator. Users can generate a password 8-128 charact
 ##Usage
 To generate a random password:
 
-1. Click the 'Generate Password" button.
+
+#1. Click the 'Generate Password" button.
 
 <img src= "https://github.com/andreaives/random_password_generator/blob/master/untitled%20folder/img1.png">;
 
