@@ -33,6 +33,7 @@ The main tech used was JavaScript, HTML, and CSS. This code was created on Visua
 ##Problems I faced
 My biggest problem was finding the bit of code that was not allowing my prompts to render correctly and making sure the prompts were looping properly. There was also an issue when I tried to generate the random password it would include part of my code.
 
+[Random Password Link](https://andreaives.github.io/random_password_generator/)
 
 ##Credits
 Most of the credit goes to my tutor Tyler Bolty & my amazing classmates that keep me sane!
